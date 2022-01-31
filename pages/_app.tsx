@@ -1,6 +1,7 @@
 import type { ReactElement, ReactNode } from 'react'
 import type { NextPage } from 'next'
 import type { AppProps } from 'next/app'
+import 'tailwindcss/tailwind.css'
 import '../styles/globals.css'
 import Layout from '../components/layout/layout'
 
