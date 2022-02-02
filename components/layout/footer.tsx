@@ -9,7 +9,7 @@ const Footer: NextPage = () => {
   const closeKampaModal = () => setKampaModalShow(false)
 
   return (
-    <footer className='p-5 border-t border-t-slate-400'>
+    <footer className='p-5 text-sm border-t border-t-slate-400'>
       <ul>
         <li>
           要望、改善提案、不具合報告はTwitter

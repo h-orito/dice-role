@@ -1,3 +1,3 @@
 export namespace SystemConst {
-  export const APPLICATION_NAME = 'サービス名'
+  export const APPLICATION_NAME = '[サービス名]'
 }
