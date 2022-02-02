@@ -5,7 +5,7 @@ import type {
 } from 'next'
 import Head from 'next/head'
 import { SystemConst } from '../components/const'
-import styles from '../styles/home.module.css'
+import styles from '/styles/home.module.css'
 
 type Data = {
   hoge: string
