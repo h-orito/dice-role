@@ -1,0 +1,7 @@
+.tab_button {
+  @apply flex justify-center py-2 text-gray-500 cursor-pointer;
+}
+
+.tab_button.selected {
+  @apply text-indigo-900 bg-white rounded-tl-lg rounded-tr-lg border-l border-t border-r border-gray-100 py-2;
+}

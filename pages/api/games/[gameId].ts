@@ -12,9 +12,9 @@ export default function handler(
   res.status(200).json({
     game: {
       id: parseInt(`${gameId}`),
-      name: 'ここに定期ゲームの名前',
+      name: 'ゲームの名前',
       description:
-        'ここに定期ゲームの説明。長くなると思う。長かったら省略した方がいいかも？',
+        'ここにゲームの説明。長くなると思う。長かったら省略した方がいいかも？',
       imageUrl: '/public/dice.jpg'
     }
   })

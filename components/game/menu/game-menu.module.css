@@ -1,0 +1,7 @@
+.menu_button {
+  @apply flex justify-center py-2 text-gray-500 cursor-pointer;
+}
+
+.menu_button.selected {
+  @apply text-indigo-900 bg-white rounded-full shadow;
+}
