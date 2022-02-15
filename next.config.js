@@ -3,6 +3,9 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: ['placehold.jp', 'wolfort.net']
+  },
+  experimental: {
+    outputStandalone: true
   }
 }
 

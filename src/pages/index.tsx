@@ -6,7 +6,7 @@ import type {
 import Link from 'next/link'
 import Head from 'next/head'
 import Image from 'next/image'
-import diceImage from '/public/dice.jpg'
+import diceImage from '../public/dice.jpg'
 import { SystemConst } from '../components/const'
 
 type Data = {
