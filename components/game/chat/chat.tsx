@@ -16,7 +16,7 @@ const Chat: React.FC<Props> = (props: Props) => {
   return (
     <div className={props.isVisible ? '' : 'hidden'}>
       <ChatTabs currentTab={currentTab} setCurrentTab={setCurrentTab} />
-      <div className='py-6 px-4 -mt-2 text-gray-700 bg-white rounded-lg border border-gray-100 shadow'>
+      <div className='py-6 px-2 -mt-2 text-gray-700 bg-white rounded-lg border border-gray-100 shadow sm:px-4'>
         <Message />
         <Message />
         <Message />
@@ -93,7 +93,7 @@ const Message: React.FC = () => {
         <span className='text-sm text-gray-400'>2022/12/31 23:59:59</span>
       </div>
       <div className='flex flex-1'>
-        <div>
+        <div className='mr-4 ml-2'>
           <Image
             className='rounded-lg'
             src='http://placehold.jp/180x240.png'
@@ -102,8 +102,8 @@ const Message: React.FC = () => {
             alt='image'
           />
         </div>
-        <div className='flex-1 ml-5'>
-          <p className='leading-relaxed'>
+        <div className='flex-1'>
+          <p className='leading-relaxed text-gray-700'>
             ある日の超暮方(ほぼ夜)の事である。一人の下人が、クソデカい羅生門の完全な真下で雨やみを気持ち悪いほどずっと待ちまくっていた。
             <br />
             馬鹿みたいに広い門の真下には、この大男のほかに全然誰もいない。ただ、所々丹塗のびっくりするくらい剥げた、信じられないほど大きな円柱に、象くらいある蟋蟀が一匹とまっている。クソデカ羅生門が、大河のように広い朱雀大路にある以上は、この狂った男のほかにも、激・雨やみをする巨大市女笠や爆裂揉烏帽子が、もう二三百人はありそうなものである。それが、この珍妙男のほかには全然誰もマジで全くいない。

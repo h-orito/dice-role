@@ -8,6 +8,8 @@ import {
   faUserCog
 } from '@fortawesome/free-solid-svg-icons'
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core'
+// 大きく表示される対策
+import '@fortawesome/fontawesome-svg-core/styles.css'
 import styles from './game-menu.module.css'
 
 type MenuProps = {

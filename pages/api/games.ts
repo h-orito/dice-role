@@ -15,21 +15,24 @@ export default function handler(
         name: 'ここに定期ゲームの名前',
         description:
           'ここに定期ゲームの説明。長くなると思う。長かったら省略した方がいいかも？',
-        imageUrl: '/public/dice.jpg'
+        imageUrl: '/public/dice.jpg',
+        map: []
       },
       {
         id: 2,
         name: 'ここに定期ゲームの名前',
         description:
           'ここに定期ゲームの説明。長くなると思う。長かったら省略した方がいいかも？',
-        imageUrl: '/public/dice.jpg'
+        imageUrl: '/public/dice.jpg',
+        map: []
       },
       {
         id: 3,
         name: 'ここに定期ゲームの名前',
         description:
           'ここに定期ゲームの説明。長くなると思う。長かったら省略した方がいいかも？',
-        imageUrl: '/public/dice.jpg'
+        imageUrl: '/public/dice.jpg',
+        map: []
       }
     ]
   })

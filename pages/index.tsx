@@ -35,7 +35,7 @@ const Home: NextPage = ({
       <div>
         <h1 className='text-lg'>ゲーム一覧</h1>
         <section className='mt-5'>
-          <div className='flex flex-wrap -mx-4'>
+          <div className='flex flex-wrap gap-6'>
             {data.games.map((game: Game) => (
               <GameCard key={game.id} game={game} />
             ))}
@@ -51,7 +51,7 @@ type CardProps = {
 }
 const GameCard: React.FC<CardProps> = (props: CardProps) => {
   return (
-    <div className='px-4 w-full md:w-1/2 xl:w-1/3'>
+    <div className=''>
       <Link href={`/game/${props.game.id}`} passHref>
         <a href=''>
           <div className='overflow-hidden mb-10 bg-white rounded-lg border border-slate-300 hover:border-blue-500'>

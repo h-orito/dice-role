@@ -2,11 +2,12 @@ import type { GetServerSideProps, InferGetServerSidePropsType } from 'next'
 import { useState } from 'react'
 import Head from 'next/head'
 import { SystemConst } from '../../components/const'
-import styles from './game.module.css'
 import GameMenu from '../../components/game/menu/game-menu'
 import GameInfo from '../../components/game/info/game-info'
 import Characters from '../../components/game/characters/characters'
 import Chat from '../../components/game/chat/chat'
+import GameMap from '../../components/game/map/game-map'
+import GameAction from '../../components/game/action/action'
 
 type Data = {
   game: Game | null
@@ -36,12 +37,12 @@ const GamePage = ({
 
       <div className='text-sm'>
         <GameMenu currentMenu={currentMenu} setCurrentMenu={setCurrentMenu} />
-        <div className='p-5 mt-5 text-gray-500 bg-gray-100 rounded-2xl'>
+        <div className='py-5 px-2 mt-5 text-gray-500 bg-gray-100 rounded-2xl sm:px-5'>
           <GameInfo isVisible={isVisible('info')} game={data.game} />
           <Characters isVisible={isVisible('characters')} game={data.game} />
           <Chat isVisible={isVisible('chat')} game={data.game} />
-          <div className={hiddenClass('map')}>マップを表示</div>
-          <div className={hiddenClass('action')}>アクションを表示</div>
+          <GameMap isVisible={isVisible('map')} game={data.game} />
+          <GameAction isVisible={isVisible('action')} game={data.game} />
           <div className={hiddenClass('setting')}>個人設定を表示</div>
         </div>
       </div>

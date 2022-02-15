@@ -8,7 +8,7 @@ type Props = {
 const Characters: React.FC<Props> = (props: Props) => {
   return (
     <div
-      className={`grid grid-cols-2 gap-4 ${props.isVisible ? '' : 'hidden'}`}
+      className={`grid sm:grid-cols-2 gap-4 ${props.isVisible ? '' : 'hidden'}`}
     >
       <Chara chara={null} />
       <Chara chara={null} />
@@ -27,7 +27,7 @@ type CharaProps = {
 }
 const Chara: React.FC<CharaProps> = (props: CharaProps) => {
   return (
-    <div className='flex bg-white rounded-lg border border-slate-300 hover:border-blue-500'>
+    <div className='flex p-1 bg-white rounded-lg border border-slate-300 hover:border-blue-500'>
       <div style={{ height: '120px' }}>
         <Image
           className='rounded-lg'
