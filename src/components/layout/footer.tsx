@@ -12,7 +12,7 @@ const Footer: NextPage = () => {
   const closeKampaModal = () => setKampaModalShow(false)
 
   return (
-    <footer className='p-5 text-sm border-t border-t-slate-400'>
+    <footer className='p-5 text-sm border-t border-t-slate-200'>
       <ul>
         <li>
           要望、改善提案、不具合報告はTwitter
@@ -59,17 +59,18 @@ const Footer: NextPage = () => {
             <li>
               Kampa!というサービスを利用することで、個人情報をやりとりすることなくAmazonギフトカードで投げ銭することができます。
             </li>
-            <li>
-              投げ銭していただける方は下記手順にてお願いします。
-              <ol className='mt-2 ml-10 list-decimal'>
+            <li>投げ銭していただける方は下記手順にてお願いします。</li>
+            <li className='flex justify-center'>
+              <ol className='mt-2 ml-10 list-decimal text-left'>
                 <li>
-                  最下段の「Amazonギフトカードで投げ銭」よりKampa!サイトへ遷移
+                  「Amazonギフトカードで投げ銭する」よりKampa!サイトへ遷移
                 </li>
                 <li>
                   表示されたページのメールアドレスをコピーし、Kampa!ボタンをクリック
                 </li>
                 <li>
-                  「金額」に投げ銭していただける金額を入力、「受取人」にコピーしたメールアドレスを貼り付けし、購入
+                  「受取人」にメールアドレスを貼り付け、金額を指定して購入
+                  <br />
                   （応援メッセージをいただけると喜びます）
                 </li>
               </ol>

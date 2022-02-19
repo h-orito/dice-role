@@ -8,6 +8,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import diceImage from '../public/dice.jpg'
 import { SystemConst } from '../components/const'
+import { PrimaryButton } from '../components/button/button'
 
 type Data = {
   games: Game[]
@@ -40,6 +41,11 @@ const Home: NextPage = ({
               <GameCard key={game.id} game={game} />
             ))}
           </div>
+          <Link href='/create-game' passHref>
+            <PrimaryButton onClick={() => {}}>
+              新しいゲームを作成する
+            </PrimaryButton>
+          </Link>
         </section>
       </div>
     </div>
@@ -54,7 +60,7 @@ const GameCard: React.FC<CardProps> = (props: CardProps) => {
     <div className=''>
       <Link href={`/game/${props.game.id}`} passHref>
         <a href=''>
-          <div className='overflow-hidden mb-10 bg-white rounded-lg border border-slate-300 hover:border-blue-500'>
+          <div className='overflow-hidden mb-10 max-w-md bg-white rounded-lg border border-slate-300 hover:border-blue-500'>
             <Image src={diceImage} alt='image' width={640} height={426} />
             <div className='p-6 text-black'>
               <h3 className='mb-4 text-xl font-semibold'>{props.game.name}</h3>

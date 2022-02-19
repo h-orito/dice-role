@@ -87,7 +87,7 @@ const ChatTabs: React.FC<ChatTabsProps> = (props: ChatTabsProps) => {
 const Message: React.FC = () => {
   return (
     <div className='flex flex-col p-2 mb-5 rounded-md border border-slate-400 shadow-md'>
-      <div className='mb-2'>
+      <div className='mb-2 ml-2 text-left'>
         &gt;&gt;1.&nbsp;&nbsp;<strong>にのまえ はじめ</strong>
         &nbsp;&nbsp;
         <span className='text-sm text-gray-400'>2022/12/31 23:59:59</span>
@@ -103,7 +103,7 @@ const Message: React.FC = () => {
           />
         </div>
         <div className='flex-1'>
-          <p className='leading-relaxed text-gray-700'>
+          <p className='leading-relaxed text-left text-gray-700'>
             ある日の超暮方(ほぼ夜)の事である。一人の下人が、クソデカい羅生門の完全な真下で雨やみを気持ち悪いほどずっと待ちまくっていた。
             <br />
             馬鹿みたいに広い門の真下には、この大男のほかに全然誰もいない。ただ、所々丹塗のびっくりするくらい剥げた、信じられないほど大きな円柱に、象くらいある蟋蟀が一匹とまっている。クソデカ羅生門が、大河のように広い朱雀大路にある以上は、この狂った男のほかにも、激・雨やみをする巨大市女笠や爆裂揉烏帽子が、もう二三百人はありそうなものである。それが、この珍妙男のほかには全然誰もマジで全くいない。

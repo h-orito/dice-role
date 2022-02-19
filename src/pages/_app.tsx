@@ -3,6 +3,7 @@ import type { NextPage } from 'next'
 import type { AppProps } from 'next/app'
 import 'tailwindcss/tailwind.css'
 import '../styles/globals.css'
+import 'react-datetime/css/react-datetime.css'
 import Layout from '../components/layout/layout'
 
 type NextPageWithLayout = NextPage & {

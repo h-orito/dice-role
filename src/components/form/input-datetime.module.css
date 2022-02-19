@@ -1,0 +1,7 @@
+.rdt input {
+  @apply block py-2 px-4 rounded border border-gray-200 disabled:opacity-50 text-center w-full;
+}
+
+.rdt td {
+  @apply p-3;
+}

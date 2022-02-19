@@ -1,3 +1,5 @@
+import { Button, PrimaryButton } from '../button/button'
+
 export type ButtonProps = {
   buttonName: string
   handleOnClick: (e: any) => void
@@ -27,12 +29,12 @@ const Modal: React.FC<Props> = (props: Props) => {
       >
         {props.children}
         <div className='flex justify-end items-center mt-4'>
-          <button
-            className='py-2 px-4 mr-4 text-gray-600 bg-white hover:bg-gray-100 active:bg-gray-200 rounded border border-gray-200 disabled:opacity-50'
-            onClick={props.handleClose}
-          >
-            {props.closeButtonName}
-          </button>
+          {props.submitButtonName && (
+            <PrimaryButton className='mr-4' onClick={props.handleSubmit!}>
+              {props.submitButtonName}
+            </PrimaryButton>
+          )}
+          <Button onClick={props.handleClose}>{props.closeButtonName}</Button>
         </div>
       </div>
     </div>

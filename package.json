@@ -12,11 +12,14 @@
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.17",
+    "dayjs": "^1.10.7",
     "eslint-config-prettier": "^8.3.0",
     "next": "12.0.9",
     "prettier": "^2.5.1",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-datetime": "^3.1.1",
+    "react-dom": "17.0.2",
+    "react-hook-form": "^7.27.0"
   },
   "devDependencies": {
     "@types/node": "17.0.13",
