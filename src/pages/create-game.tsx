@@ -8,8 +8,9 @@ import GameDescription from '../components/create-game/game-description'
 import GameType from '../components/create-game/game-type'
 import GameStartDatetime from '../components/create-game/game-start-datetime'
 import Interval from '../components/create-game/interval'
+import ThemeImage from '../components/create-game/theme-image'
 import ConfirmModal from '../components/create-game/confirm-modal'
-import type { Inputs } from '../components/create-game/confirm-modal'
+import type { Inputs } from '../components/create-game/inputs'
 import { SystemConst } from '../components/const'
 
 const CreateGamePage: NextPage = () => {
@@ -21,7 +22,8 @@ const CreateGamePage: NextPage = () => {
   } = useForm<Inputs>()
 
   const confirm: SubmitHandler<Inputs> = (data) => {
-    setInputs({ ...data })
+    const inputs = { ...data } as Inputs
+    setInputs(inputs)
     setIsConfirmModalShow(true)
   }
   const [isConfifrmModalShow, setIsConfirmModalShow] = useState(false)
@@ -42,6 +44,7 @@ const CreateGamePage: NextPage = () => {
             <GameType control={control} errors={errors} />
             <Interval control={control} errors={errors} getValues={getValues} />
             <GameStartDatetime control={control} errors={errors} />
+            <ThemeImage control={control} errors={errors} />
             <PrimaryButton onClick={() => {}} disabled={isSubmitting}>
               確認
             </PrimaryButton>

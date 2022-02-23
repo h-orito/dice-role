@@ -26,12 +26,12 @@ const GameMenu: React.FC<MenuProps> = (props: MenuProps) => {
       icon: faInfoCircle
     },
     {
-      name: 'Characters',
-      icon: faUsers
-    },
-    {
       name: 'Chat',
       icon: faComments
+    },
+    {
+      name: 'Characters',
+      icon: faUsers
     },
     {
       name: 'Map',

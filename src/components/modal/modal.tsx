@@ -11,6 +11,7 @@ export type Props = {
   handleClose: () => void
   submitButtonName?: string
   handleSubmit?: () => void
+  disabled?: boolean
   children: React.ReactNode
 }
 
@@ -30,7 +31,11 @@ const Modal: React.FC<Props> = (props: Props) => {
         {props.children}
         <div className='flex justify-end items-center mt-4'>
           {props.submitButtonName && (
-            <PrimaryButton className='mr-4' onClick={props.handleSubmit!}>
+            <PrimaryButton
+              className='mr-4'
+              onClick={props.handleSubmit!}
+              disabled={props.disabled}
+            >
               {props.submitButtonName}
             </PrimaryButton>
           )}

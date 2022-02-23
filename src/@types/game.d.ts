@@ -1,19 +1,10 @@
 type Game = {
-  id: number
+  key?: string | null
   name: string
   description: string
-  imageUrl: string
-  map: Map | null
-}
-
-type Map = {
-  cols: number
-  rows: number
-  cells: Cell[]
-}
-
-type Cell = {
-  col: number
-  row: number
-  type: string | null
+  type: string
+  intervalSeconds: number
+  startDatetime: Date
+  themeImageUrl: string | null
+  created: number
 }

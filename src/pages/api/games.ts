@@ -1,39 +1,27 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
+import database from '../../components/firebase/database'
+import { signIn } from '../../plugins/firebase'
 
-type Data = {
-  games: Game[]
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  if (req.method === 'POST') {
+    const game = await handlePost(req)
+    return res.status(200).json({ game: game })
+  }
+
+  // get request
+  const games = await database.fetchGames()
+  res.status(200).json({
+    games
+  })
 }
 
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
-) {
-  res.status(200).json({
-    games: [
-      {
-        id: 1,
-        name: 'ここに定期ゲームの名前',
-        description:
-          'ここに定期ゲームの説明。長くなると思う。長かったら省略した方がいいかも？',
-        imageUrl: '/public/dice.jpg',
-        map: []
-      },
-      {
-        id: 2,
-        name: 'ここに定期ゲームの名前',
-        description:
-          'ここに定期ゲームの説明。長くなると思う。長かったら省略した方がいいかも？',
-        imageUrl: '/public/dice.jpg',
-        map: []
-      },
-      {
-        id: 3,
-        name: 'ここに定期ゲームの名前',
-        description:
-          'ここに定期ゲームの説明。長くなると思う。長かったら省略した方がいいかも？',
-        imageUrl: '/public/dice.jpg',
-        map: []
-      }
-    ]
-  })
+const handlePost = async (req: any) => {
+  const game: Game = JSON.parse(req.body)
+  // login
+  await signIn()
+  // register new game to realtime database
+  return await database.registerGame(game)
 }

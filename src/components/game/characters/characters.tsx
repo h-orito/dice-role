@@ -1,5 +1,7 @@
 import Image from 'next/image'
 
+// TODO プロフィール画像は幅360or720, 高さ可変
+// TODO アイコンは60x60or120x120
 type Props = {
   game: Game
   isVisible: boolean

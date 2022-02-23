@@ -13,7 +13,7 @@ const Select: React.FC<Props> = (props: Props) => {
   return (
     <select
       id={props.id}
-      className={`block py-2 px-4 rounded border border-gray-200 disabled:opacity-50 ${props.className}`}
+      className={`block sm:py-2 px-4 rounded border border-gray-200 disabled:opacity-50 ${props.className}`}
       name={props.name}
       value={props.value}
       onChange={(e) => props.onChange(e)}

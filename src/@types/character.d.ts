@@ -1,6 +1,5 @@
 type Character = {
-  id: number
+  key: string
   name: string
-  description: string
   imageUrl: string
 }

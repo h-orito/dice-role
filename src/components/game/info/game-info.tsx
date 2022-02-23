@@ -1,42 +1,31 @@
+import Image from 'next/image'
+
 type Props = {
   game: Game
   isVisible: boolean
 }
 
-const GameInfo: React.FC<Props> = (props: Props) => {
+const GameInfo: React.FC<Props> = ({ game, isVisible }) => {
   return (
-    <div className={props.isVisible ? '' : 'hidden'}>
-      <p className='mb-5 text-xl font-bold'>{props.game.name}</p>
-      <p className='text-sm leading-relaxed'>
-        昔々、それはもうあきれかえるくらい昔。重箱の隅をつつくようなこの世界の片隅に、
-        <br />
-        仙人のごとく白髪白鬚を腰にまで下ろした枯草のような顔のおじいさんと、
-        <br />
-        齢千年に及ぶ木の皮の表面のようにしわくちゃな顔のおばあさんが住んでいました。
-        <br />
-        おじいさんは大気圏を超えるほどそびえ立つ山へ芝狩りに、
-        <br />
-        おばあさんは大河のように広い川へ、一億二千枚の服の洗濯に行きました。
-        <br />
-        おばあさんが川で怒涛のように洗濯をしていると、
-        <br />
-        ドドドドドドドドドドドドドンブラコ、
-        <br />
-        ドドドドドドドドドドドドドンブラコと、
-        <br />
-        大河の両岸を削りながら超巨大な桃が流れてきました。
-        <br />
-        婆「おお、こいつは重畳（ちょうじょう）！！じいさんへのみやげにしてくれるわ！」
-        <br />
-        おばあさんは超巨大な桃によってできた洪水を乗り越え、その桃を片手でつまみあげると一飛びで家へと持ち帰りました。
-        <br />
-        そして、おじいさんとおばあさんが桃を食べようと、対城用超超巨大白銀刃（しろがねやいば）で舞空術（ぶくうじゅつ）からの天地開闢（かいびゃく）切りで桃をたたっ切ると、
-        <br />
-        なんと中から家の屋根をぶち破るほどクソデカい男の子が飛び出してきました。
-        <br />
-        爺「でかぁあああい！説明ド不要！こいつは神様からの超贈り物ぉ！」
-        <br />
-      </p>
+    <div className={isVisible ? '' : 'hidden'}>
+      <p className='mb-5 text-xl font-bold'>{game.name}</p>
+
+      {game.themeImageUrl && (
+        <div className='relative w-full h-96'>
+          <Image
+            src={game.themeImageUrl}
+            alt='image'
+            layout='fill'
+            objectFit='contain'
+          />
+        </div>
+      )}
+      {game.description &&
+        game.description.split(/(\n)/).map((item: string, index: number) => (
+          <p className='leading-relaxed break-words' key={index}>
+            {item}
+          </p>
+        ))}
     </div>
   )
 }

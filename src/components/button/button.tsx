@@ -1,41 +1,93 @@
-import { NextPage } from 'next'
 import styles from './button.module.css'
 
-export type Props = {
+type BaseProps = Props & {
+  typeClassName: string
+}
+const BaseButton: React.FC<BaseProps> = ({
+  className,
+  typeClassName,
+  onClick,
+  disabled,
+  children
+}) => {
+  return (
+    <button
+      className={`${styles.button} ${typeClassName} ${className ?? ''}`}
+      disabled={disabled ?? false}
+      onClick={onClick}
+    >
+      {children}
+    </button>
+  )
+}
+
+type Props = {
   className?: string
   onClick: () => void
   disabled?: boolean
   children: React.ReactNode
 }
 
-const BaseButton: React.FC<Props> = (props: Props, type: string) => {
-  const typeClassName =
-    type === 'primary'
-      ? `${styles.primary}`
-      : type === 'warn'
-      ? `${styles.warn}`
-      : type === 'danger'
-      ? `${styles.danger}`
-      : `${styles.normal}`
+export const Button: React.FC<Props> = ({
+  className,
+  onClick,
+  disabled,
+  children
+}) => (
+  <BaseButton
+    className={className}
+    onClick={onClick}
+    disabled={disabled}
+    typeClassName={styles.normal}
+  >
+    {children}
+  </BaseButton>
+)
 
-  return (
-    <button
-      className={`${styles.button} ${typeClassName} ${props.className}`}
-      disabled={props.disabled ?? false}
-      onClick={props.onClick}
-    >
-      {props.children}
-    </button>
-  )
-}
+export const PrimaryButton: React.FC<Props> = ({
+  className,
+  onClick,
+  disabled,
+  children
+}) => (
+  <BaseButton
+    className={className}
+    onClick={onClick}
+    disabled={disabled}
+    typeClassName={styles.primary}
+  >
+    {children}
+  </BaseButton>
+)
 
-export const Button: NextPage<Props> = (props: Props) => BaseButton(props, '')
+export const WarnButton: React.FC<Props> = ({
+  className,
+  onClick,
+  disabled,
+  children
+}) => (
+  <BaseButton
+    className={className}
+    onClick={onClick}
+    disabled={disabled}
+    typeClassName={styles.warn}
+  >
+    {children}
+  </BaseButton>
+)
 
-export const PrimaryButton: NextPage<Props> = (props: Props) =>
-  BaseButton(props, 'primary')
-
-export const WarnButton: NextPage<Props> = (props: Props) =>
-  BaseButton(props, 'warn')
-
-export const DangerButton: NextPage<Props> = (props: Props) =>
-  BaseButton(props, 'danger')
+export const DangerButton: React.FC<Props> = ({
+  className,
+  onClick,
+  disabled,
+  children
+}) => (
+  <BaseButton
+    className={className}
+    onClick={onClick}
+    disabled={disabled}
+    typeClassName={styles.danger}
+  >
+    {children}
+  </BaseButton>
+)

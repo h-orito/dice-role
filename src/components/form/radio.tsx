@@ -10,7 +10,7 @@ type Props = {
 
 const Radio: React.FC<Props> = (props: Props) => {
   return (
-    <div className='flex gap-2'>
+    <div className={`flex gap-2 ${props.className ? props.className : ''}`}>
       {props.items.map((item, index) => {
         const checked = props.value === item.value
         return (
@@ -26,7 +26,7 @@ const Radio: React.FC<Props> = (props: Props) => {
             />
             <label
               htmlFor={`${props.name}_${index}`}
-              className='py-2 px-4 text-base peer-checked:text-blue-500 hover:text-white hover:bg-blue-500 rounded border peer-checked:border-blue-500 hover:border-blue-500 disabled:opacity-50 cursor-pointer'
+              className='py-1 px-4 text-base peer-checked:text-blue-500 hover:text-white hover:bg-blue-500 rounded border peer-checked:border-blue-500 hover:border-blue-500 disabled:opacity-50 cursor-pointer sm:py-2'
             >
               {item.name}
             </label>
