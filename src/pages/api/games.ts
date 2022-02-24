@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import database from '../../components/firebase/database'
-import { signIn } from '../../plugins/firebase'
+import database from 'components/firebase/database'
+import { signIn } from 'plugins/firebase'
 
 export default async function handler(
   req: NextApiRequest,

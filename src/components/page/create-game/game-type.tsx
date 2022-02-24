@@ -1,6 +1,6 @@
 import { Controller } from 'react-hook-form'
-import Label from '../form/label'
-import Radio from '../form/radio'
+import Label from 'components/form/label'
+import Radio from 'components/form/radio'
 
 type Props = {
   control: any

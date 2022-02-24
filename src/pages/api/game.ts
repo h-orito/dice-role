@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import database from '../../components/firebase/database'
+import database from 'components/firebase/database'
 
 type Data = {
   game: Game | null

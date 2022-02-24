@@ -1,35 +1,37 @@
 import { Controller } from 'react-hook-form'
-import Label from '../form/label'
-import InputText from '../form/input-text'
+import Label from 'components/form/label'
+import Textarea from 'components/form/textarea'
 
 type Props = {
   control: any
   errors: any
 }
-const GameName = (props: Props) => {
+const GameDescription = (props: Props) => {
   const { control, errors } = props
 
   return (
     <Controller
-      name='gameName'
+      name='description'
       control={control}
       defaultValue=''
-      rules={{ required: true, minLength: 3, maxLength: 40 }}
+      rules={{ maxLength: 4000 }}
       render={({ field: { name, value, onChange } }) => (
         <div className='mb-8'>
-          <Label>ゲーム名</Label>
+          <Label>ゲームの説明</Label>
           <div className='flex'>
-            <InputText
-              className={`flex-1 ${errors.gameName ? 'border-red-500' : ''}`}
+            <Textarea
+              className={`flex-1 h-40 ${
+                errors.description ? 'border-red-500' : ''
+              }`}
               name={name}
               value={value}
               onChange={onChange}
             />
           </div>
-          {errors.gameName && (
+          {errors.description && (
             <div className='flex justify-center'>
               <p className='text-red-500'>
-                ゲーム名は3文字以上40文字以内で入力してください。
+                ゲームの説明は4000文字以内で入力してください。
               </p>
             </div>
           )}
@@ -39,4 +41,4 @@ const GameName = (props: Props) => {
   )
 }
 
-export default GameName
+export default GameDescription

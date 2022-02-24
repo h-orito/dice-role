@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
-import Modal from '../modal/modal'
+import Modal from 'components/modal/modal'
 import dayjs from 'dayjs'
 import type { Inputs } from './inputs'
 

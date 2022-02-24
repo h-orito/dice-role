@@ -1,9 +1,9 @@
 import { useState, ChangeEvent } from 'react'
-import Radio from '../../form/radio'
 import Image from 'next/image'
-import Select from '../../form/select'
-import Textarea from '../../form/textarea'
-import { PrimaryButton } from '../../button/button'
+import Radio from 'components/form/radio'
+import Select from 'components/form/select'
+import Textarea from 'components/form/textarea'
+import { PrimaryButton } from 'components/button/button'
 
 const ChatForm: React.FC = () => {
   const [chatType, setChatType] = useState('normal')

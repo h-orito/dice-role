@@ -8,7 +8,7 @@ import {
   orderByChild,
   limitToLast
 } from 'firebase/database'
-import { db } from '../../plugins/firebase'
+import { db } from 'plugins/firebase'
 
 const database = {
   fetchGame: async (key: string): Promise<Game | null> => {

@@ -1,8 +1,8 @@
-import { useState, ChangeEvent, isValidElement } from 'react'
+import { useState, ChangeEvent } from 'react'
 import { Controller } from 'react-hook-form'
 import Image from 'next/image'
-import Label from '../form/label'
-import InputImage from '../form/input-image'
+import Label from 'components/form/label'
+import InputImage from 'components/form/input-image'
 
 type Props = {
   control: any

@@ -1,11 +1,11 @@
-import { PrimaryButton } from '../../button/button'
-import Label from '../../form/label'
-import InputText from '../../form/input-text'
-import Select from '../../form/select'
-import Radio from '../../form/radio'
 import { useState } from 'react'
-import Textarea from '../../form/textarea'
-import Checkbox from '../../form/checkbox'
+import { PrimaryButton } from 'components/button/button'
+import Label from 'components/form/label'
+import InputText from 'components/form/input-text'
+import Select from 'components/form/select'
+import Radio from 'components/form/radio'
+import Textarea from 'components/form/textarea'
+import Checkbox from 'components/form/checkbox'
 
 type Props = {
   game: Game

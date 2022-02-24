@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import { SystemConst } from '../const'
+import { SystemConst } from 'components/const'
 import Link from 'next/link'
 
 const NavBar: NextPage = () => {

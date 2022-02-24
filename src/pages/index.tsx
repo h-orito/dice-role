@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import type {
   NextPage,
   GetServerSideProps,
@@ -7,9 +8,11 @@ import Link from 'next/link'
 import Head from 'next/head'
 import Router from 'next/router'
 import Image from 'next/image'
-import diceImage from '../public/dice.jpg'
-import { SystemConst } from '../components/const'
-import { PrimaryButton } from '../components/button/button'
+import diceImage from 'public/dice.jpg'
+import { SystemConst } from 'components/const'
+import { PrimaryButton } from 'components/button/button'
+import SignInModal from 'components/firebase/sign-in-modal'
+import { useAuthState, signOut } from 'components/firebase/auth'
 
 type Data = {
   games: Game[]
@@ -26,6 +29,9 @@ export const getServerSideProps: GetServerSideProps = async () => {
 const Home: NextPage = ({
   data
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+  const [isSigninModalShow, setSigninModalShow] = useState(false)
+  const { isLoading, isSignedIn } = useAuthState()
+
   return (
     <div>
       <Head>
@@ -42,9 +48,34 @@ const Home: NextPage = ({
               <GameCard key={game.key} game={game} />
             ))}
           </div>
-          <PrimaryButton onClick={() => Router.push('/create-game')}>
-            新しいゲームを作成する
-          </PrimaryButton>
+          {!isLoading && !isSignedIn && (
+            <>
+              <p className='mb-2 text-sm leading-relaxed'>
+                サインインすると部屋を作成することができます。
+              </p>
+              <PrimaryButton onClick={() => setSigninModalShow(true)}>
+                サインインする
+              </PrimaryButton>
+              <SignInModal
+                isShow={isSigninModalShow}
+                setIsShow={setSigninModalShow}
+              />
+            </>
+          )}
+          {!isLoading && isSignedIn && (
+            <>
+              <div className='flex justify-center mb-5'>
+                <PrimaryButton onClick={() => Router.push('/create-game')}>
+                  新しいゲームを作成する
+                </PrimaryButton>
+              </div>
+              <div className='flex justify-center'>
+                <PrimaryButton onClick={() => signOut()}>
+                  サインアウトする
+                </PrimaryButton>
+              </div>
+            </>
+          )}
         </section>
       </div>
     </div>

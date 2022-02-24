@@ -1,6 +1,6 @@
 import { ChangeEvent } from 'react'
-import Select from '../../form/select'
-import { PrimaryButton } from '../../button/button'
+import Select from 'components/form/select'
+import { PrimaryButton } from 'components/button/button'
 
 type Props = {
   currentTab: string

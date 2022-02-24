@@ -1,6 +1,6 @@
 import { Controller } from 'react-hook-form'
-import Label from '../form/label'
-import InputNumber from '../form/input-number'
+import Label from 'components/form/label'
+import InputNumber from 'components/form/input-number'
 
 type Props = {
   control: any

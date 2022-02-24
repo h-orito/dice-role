@@ -1,6 +1,6 @@
 import { Controller } from 'react-hook-form'
-import Label from '../form/label'
-import InputDatetime from '../form/input-datetime'
+import Label from 'components/form/label'
+import InputDatetime from 'components/form/input-datetime'
 import dayjs from 'dayjs'
 import isSameOrAfter from 'dayjs/plugin/isSameOrAfter'
 import isSameOrBefore from 'dayjs/plugin/isSameOrBefore'

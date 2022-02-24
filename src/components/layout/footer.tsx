@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import type { NextPage } from 'next'
-import Modal from '../modal/modal'
-import { PrimaryButton, WarnButton, DangerButton } from '../button/button'
+import Modal from 'components/modal/modal'
+import { PrimaryButton } from 'components/button/button'
 
 const Footer: NextPage = () => {
   const [isKampaModalShow, setKampaModalShow] = useState(false)

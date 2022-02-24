@@ -1,4 +1,4 @@
-import { Button, PrimaryButton } from '../button/button'
+import { Button, PrimaryButton } from 'components/button/button'
 
 export type ButtonProps = {
   buttonName: string
