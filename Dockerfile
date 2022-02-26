@@ -8,6 +8,7 @@ COPY package*.json ./
 COPY next.config.js next.config.js
 COPY postcss.config.js postcss.config.js
 COPY tailwind.config.js tailwind.config.js
+COPY .env.production .env.production
 
 RUN npm ci && \
     npm run build
