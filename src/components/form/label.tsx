@@ -4,7 +4,13 @@ export type Props = {
 }
 
 const Label: React.FC<Props> = (props: Props) => {
-  return <label className='block mb-2 font-bold'>{props.children}</label>
+  return (
+    <label
+      className={`block mb-2 font-bold ${props.className && props.className}`}
+    >
+      {props.children}
+    </label>
+  )
 }
 
 export default Label

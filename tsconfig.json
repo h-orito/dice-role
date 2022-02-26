@@ -14,7 +14,11 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "baseUrl": "./src/"
+    "baseUrl": "./src",
+    "paths": {
+      "@/button/*": ["components/button/*"],
+      "@/form/*": ["components/form/*"]
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/@types/*.d.ts"],
   "exclude": ["node_modules"]
