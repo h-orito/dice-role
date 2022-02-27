@@ -25,7 +25,7 @@ ENV NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID $NEXT_PUBLIC_FIREBASE_MESSAGING_SEN
 ARG NEXT_PUBLIC_FIREBASE_APP_ID
 ENV NEXT_PUBLIC_FIREBASE_APP_ID $NEXT_PUBLIC_FIREBASE_APP_ID
 
-RUN npm ci --production && \
+RUN npm ci && \
     npm run build
 
 FROM arm64v8/node:17-bullseye
@@ -49,7 +49,7 @@ COPY --chown=user:user /app/package*.json ./
 
 RUN mkdir /home/user/node_modules
 
-RUN npm ci --production
+RUN npm ci
 EXPOSE 3000
 ENV PORT 3000
 ENV HOST 0.0.0.0
