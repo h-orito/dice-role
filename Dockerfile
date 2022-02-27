@@ -43,7 +43,7 @@ ENV LISTEN_PORT 3000
 ENV PATH /home/user/node_modules/bin:${PATH}
 ENV NODE_ENV production
 
-COPY --from=builder --chown=user:user /app/public ./public
+# COPY --from=builder --chown=user:user /app/public ./public
 COPY --chown=user:user /app/package*.json ./
 COPY --from=builder --chown=user:user /app/.next/standalone ./
 COPY --from=builder --chown=user:user /app/.next/static ./.next/static
