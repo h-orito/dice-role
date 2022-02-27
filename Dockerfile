@@ -33,8 +33,6 @@ NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=$NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET\n\
 NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=$NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID\n\
 NEXT_PUBLIC_FIREBASE_APP_ID=$NEXT_PUBLIC_FIREBASE_APP_ID" >> .env.local
 
-RUN cat .env.local
-
 RUN npm ci
 RUN npm run build
 
@@ -55,6 +53,7 @@ ENV NODE_ENV production
 
 COPY --chown=user:user package*.json ./
 COPY --from=builder --chown=user:user /app/.env.production ./
+COPY --from=builder --chown=user:user /app/.env.local ./
 COPY --from=builder --chown=user:user /app/.next/standalone ./
 COPY --from=builder --chown=user:user /app/.next/static ./.next/static
 
