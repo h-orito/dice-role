@@ -45,7 +45,7 @@ ENV NODE_ENV production
 
 COPY --from=builder --chown=user:user /app/.next/standalone ./
 COPY --from=builder --chown=user:user /app/.next/static ./.next/static
-COPY --chown=user:user /app/package*.json ./
+COPY --chown=user:user /package*.json ./
 
 RUN mkdir /home/user/node_modules
 
