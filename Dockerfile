@@ -25,10 +25,8 @@ ENV NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID $NEXT_PUBLIC_FIREBASE_MESSAGING_SEN
 ARG NEXT_PUBLIC_FIREBASE_APP_ID
 ENV NEXT_PUBLIC_FIREBASE_APP_ID $NEXT_PUBLIC_FIREBASE_APP_ID
 
-ENV NODE_ENV production
-
-RUN npm ci && \
-    npm run build
+RUN npm ci
+RUN npm run build
 
 FROM arm64v8/node:17-bullseye
 
@@ -45,9 +43,10 @@ ENV LISTEN_PORT 3000
 ENV PATH /home/user/node_modules/bin:${PATH}
 ENV NODE_ENV production
 
+COPY --from=builder --chown=user:user /app/public ./public
+COPY --chown=user:user /app/package*.json ./
 COPY --from=builder --chown=user:user /app/.next/standalone ./
 COPY --from=builder --chown=user:user /app/.next/static ./.next/static
-COPY --chown=user:user /package*.json ./
 
 RUN mkdir /home/user/node_modules
 
