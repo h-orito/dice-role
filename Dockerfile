@@ -33,6 +33,8 @@ NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=$NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET\n\
 NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=$NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID\n\
 NEXT_PUBLIC_FIREBASE_APP_ID=$NEXT_PUBLIC_FIREBASE_APP_ID" >> .env.local
 
+RUN cat .env.local
+
 RUN npm ci
 RUN npm run build
 
@@ -58,7 +60,7 @@ COPY --from=builder --chown=user:user /app/.next/static ./.next/static
 
 RUN mkdir /home/user/node_modules
 
-RUN npm ci
+RUN npm ci --only=production
 EXPOSE 3000
 ENV PORT 3000
 ENV HOST 0.0.0.0
