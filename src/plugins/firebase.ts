@@ -17,6 +17,7 @@ const config = {
   messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGINGSENDER_ID,
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID
 }
+
 const firebaseApp = initializeApp(config)
 const db = getDatabase(firebaseApp)
 const sto = getStorage(firebaseApp)

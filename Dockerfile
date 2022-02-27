@@ -43,14 +43,15 @@ ENV LISTEN_PORT 3000
 ENV PATH /home/user/node_modules/bin:${PATH}
 ENV NODE_ENV production
 
-EXPOSE 3000
-
-COPY --from=builder --chown=user:user /app/.next .next
+COPY --from=builder --chown=user:user /app/.next/standalone ./
+COPY --from=builder --chown=user:user /app/.next/static ./.next/static
 COPY --chown=user:user package*.json ./
 
 RUN mkdir /home/user/node_modules
 
 RUN npm ci --production
+EXPOSE 3000
+ENV PORT 3000
 ENV HOST 0.0.0.0
 
-ENTRYPOINT ["node", ".next/standalone/server.js"] 
+ENTRYPOINT ["node", "server.js"] 
